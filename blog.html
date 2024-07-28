@@ -24,7 +24,7 @@
         box-shadow: 10px 10px 20px #bebebe,
         -10px -10px 20px #ffffff;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 3fr 1fr;
       }
       .headertitle{
         color: rgb(0, 31, 63);
@@ -37,7 +37,44 @@
         padding-top: 5px;
         margin-bottom: 5px;
       }
-
+      .iniciodiv{
+        border: none;
+        height: auto;
+        width: 100%;
+        border-radius: 30px;
+        display:  block;
+        justify-content: center;
+        
+      }
+      .iniciobutton{
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: #ffffff00;
+        text-decoration: none;
+        color: rgb(0, 31, 63);
+        justify-content: center;
+        align-items: center;
+        font-family: lora;
+        font-weight: 600;
+        font-size: large;
+        padding-top: 5px;
+      }
+      .iniciobutton:hover {
+        border-radius: 10px;
+        background: #e0e0e0;
+        box-shadow:  -20px 20px 60px #bebebe,
+                    20px -20px 60px #ffffff;
+      }
+      .iniciobutton:active{
+        border-radius: 10px;
+        background: linear-gradient(145deg, #001c39, #002143);
+        box-shadow:  20px 20px 60px #001a36,
+                    -20px -20px 60px #002448;
+        color:  rgb(224, 224, 224);
+      }
       .contentrows{
         max-width: 900px;
         font-family: lora;
@@ -88,20 +125,25 @@
         margin-left: auto;
         margin-right: auto;
       }
+      
     </style>
 
   </head>
   <body class="body" style="margin:0;">
     <div class="bodyinside">
       <div class="headergrid">
-        <div class="iniciobutton">
-          
+        <div class="iniciodiv">
+          <a style="text-decoration: none;" href="https://stackoverflow.com/questions/48119478/a-role-button-instead-of-button">
+            <button class="iniciobutton">INICIO</button>
+          </a>
         </div>
         <div class="headertitle">
         Marvin Reviews
         </div>
-        <div class="searchbutton">
-          
+        <div class="iniciodiv">
+          <a style="text-decoration: none;" href="https://stackoverflow.com/questions/48119478/a-role-button-instead-of-button">
+            <button class="iniciobutton">ARCHIVO</button>
+          </a>
         </div>
       </div>
       <div class="content">
