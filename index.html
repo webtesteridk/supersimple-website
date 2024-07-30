@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Atlas Austral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .body{
+        background-color: rgb(255, 255, 255);
+      }
+      .bodyinside{
+        padding-bottom: 20px;
+        margin: auto;
+        max-width: 1500px;
+
+      }
+      .headergrid {
+        background-color: rgb(0, 31, 63);
+        position: sticky; top: 0;
+        border-radius: 10px;
+        max-height: 60px;
+        margin-top: 1vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+      }
+      .headertitle{
+        position: sticky; top: 0;
+        color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: lora;
+        font-weight: 600;
+        font-size: 160%;
+        padding-top: 5px;
+        margin-bottom: 5px;
+      }
+      .iniciodiv{
+        border: none;
+        height: auto;
+        width: 100%;
+        border-radius: 30px;
+        display:  block;
+        justify-content: center;
+        
+      }
+      .iniciobutton{
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: #ffffff00;
+        text-decoration: none;
+        color: rgb(231, 231, 231);
+        justify-content: center;
+        align-items: center;
+        font-family: lora;
+        font-weight: 600;
+        font-size: 90%;
+        padding-top: 5px;
+        transition:0.2s;
+      }
+      .iniciobutton:hover {
+        border-radius: 10px;
+        color: rgb(0, 31, 63);
+        background: rgb(255, 196, 0);
+      }
+      .iniciobutton:active{
+        color: rgb(0, 31, 63);
+        border-radius: 10px;
+        background: rgb(255, 220, 105);
+      }
+      .contentrows{
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 1500px;
+        font-family: lora;
+        color: rgb(0, 31, 63);
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        border-color: #000000;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+      }
+      .titulo{
+        text-decoration: overline;
+        font-size: xx-large;
+        padding-top: 20px;
+        margin-bottom: 10px;
+      }
+      .subtitulo{
+        font-size: large;
+        margin-bottom: 10px;
+        text-align: right;
+        font-style: italic;
+        }
+      .cuerpo{
+        line-height: 25px;
+        font-size: large;
+        padding-bottom: 20px;
+      }
+      .content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      /* Responsive layout - makes a one column layout instead of a two-column layout */
+        @media (max-width: 1500px) {
+          .content{
+            flex-direction: column;
+          }
+        }
+      .aboutme{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        word-wrap: normal;
+        height: auto;
+        width: auto;
+        max-width: 20%;
+        justify-content: left;
+        align-items: start;
+        font-family: lora;
+        color: rgb(0, 31, 63);
+        margin-top: 30px;
+        margin-right: 10px;
+        margin-left: 16px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+      }
+      /* Responsive layout - makes a one column layout instead of a two-column layout */
+      @media (max-width: 1500px) 
+      {
+          .aboutme{
+            word-wrap: normal;
+            height: auto;
+            width: auto;
+            min-width: 90%;
+            max-width: 90%;
+            justify-content: left;
+            font-family: lora;
+            color: rgb(0, 31, 63);
+            margin-top: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border: none;
+            border-color: #000000;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            padding-left: 2%;
+            padding-right: 2%;
+              }
+      }
+      .profilepic{
+        width: 90px;
+      }
+       /* Responsive layout - makes image smaller on mobile */
+       @media (max-width: 800px) 
+      {
+          .icon{
+            max-width: 45px;
+            border-radius: 10px;
+              }
+      }
+      .icon{
+        max-width: 90px;
+        border-radius: 5px;
+      }
+      .sobremi{
+        font-style: oblique;
+        font-weight: 400;
+        font-size: x-large;
+        margin-left: 10px;
+      }
+      .miinfo{
+        font-style: oblique;
+        font-weight: 400;
+        font-size: medium;
+        margin-left: 10px;
+      }
+      .image1{
+        border-radius: 5px;
+        height: auto; 
+        max-width: 100%;
+        object-fit: contain
+      }
+      .image2{
+        border-radius: 5px;
+        height: auto; 
+        max-width: 50%;
+        object-fit: contain
+      }
+      .imagecenter{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .card{
+        position: relative;
+        margin: 10px;
+        width: 330px;
+        height: 200px;
+      }
+      .cardbutton{
+        border-radius: 10px;
+        cursor: pointer;
+        position:absolute;
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        transition: 0.3s;
+      }
+      .cardbutton:hover{
+        z-index: 999;
+        box-shadow: 10px 10px 50px -26px rgb(0, 0, 0);
+      }
+      .cardcontent{
+        display: flex;
+        flex-direction: column;
+        width: 330px;
+        height: 200px;
+      }
+      .cardimagecontainer{
+        height: 150px;
+        width: 330px;
+      }
+      .cardimage{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+      .cardtextcontainer{
+        background-color: rgb(255, 196, 0);
+        text-align: center;
+        font-weight: 600;
+        font-size: large;
+        height: 25px;
+        width: 330px;
+      }
+      .cardtext{
+        padding-top: 1px;
+        margin: 0;
+      }
+      .cardtagcontainer{
+        background-color: rgb(0, 31, 63);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-weight: 600;
+        font-size: large;
+        height: 25px;
+        width: 330px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .cardtag{
+        padding-top: 1px;
+        margin: 0;
+      }
+    </style>
+
+  </head>
+  <body class="body" style="margin:0;">
+    <div class="bodyinside">
+      <div class="headergrid">
+        <div class="iniciodiv">
+          <a style="text-decoration: none;" href="index.html">
+            <button class="iniciobutton">INICIO</button>
+          </a>
+        </div>
+        <div class="headertitle">
+         Atlas Austral
+        </div>
+        <div class="iniciodiv">
+          <a style="text-decoration: none;" href="https://es.wikipedia.org/wiki/Wikipedia:Portada">
+            <button class="iniciobutton">ARCHIVO</button>
+          </a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="aboutme">
+         <div class="profilepic">
+           <img class="icon" src="icons/profile.jpg">
+         </div>
+         <div class="sobremicontainer">
+            <div class="sobremi">
+            Sobre Mí
+            </div>
+            <div class="miinfo">
+              Want to be a Software Developer or a Working Professional looking to enhance your Software Development Skills? Then, master the concepts of Full-Stack Development
+            </div>
+         </div> 
+        </div>
+        <div class="contentrows">
+          <div class="card"> 
+              <a href="reviews/blog.html">
+                <button class="cardbutton"></button>
+              </a>
+            </button>
+            <div class="cardcontent">
+              <div class="cardimagecontainer">
+                <img class="cardimage" src="reviews/icons/deadpool-vs-wolverine-2024.jpg">
+              </div>
+              <div class="cardtextcontainer">
+                <p class="cardtext">Deadpool & Wolverine</p>
+              </div>
+              <div class="cardtagcontainer">
+               <p class="cardtag">Review</p>
+              </div>
+            </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+          <div class="card"> 
+            <a href="reviews/blog.html">
+              <button class="cardbutton"></button>
+            </a>
+          </button>
+          <div class="cardcontent">
+            <div class="cardimagecontainer">
+              <img class="cardimage" src="cardsimg/tyler-lastovich-hM08wZJBlK4-unsplash.jpg">
+            </div>
+            <div class="cardtextcontainer">
+              <p class="cardtext">Deadpool & Wolverine</p>
+            </div>
+            <div class="cardtagcontainer">
+             <p class="cardtag">Review</p>
+            </div>
+          </div>
+          </div>
+      </div>
+
+    </div>
+    
+  </body>
+</html> 
